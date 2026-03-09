@@ -2,6 +2,14 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
 
+## Installation
+
+To start you have to install node modules:
+
+```bash
+npm install
+```
+
 ## Development server
 
 To start a local development server, run:
