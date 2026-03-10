@@ -1,0 +1,19 @@
+table td, table th{
+    border: 1px solid black;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.square{
+    border : 2px solid blue;
+    background-color : red;
+    height : 64px;
+    width : 64px;
+}
+
+.circle{
+    border-radius : 50%;
+}

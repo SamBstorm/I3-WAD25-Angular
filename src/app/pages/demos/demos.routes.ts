@@ -9,5 +9,8 @@ export const routes : Routes = [
         {path : 'pipes', 
             loadComponent : () => import('./components/demo03-pipes/demo03-pipes').then(c => c.Demo03Pipes)
         },
+        {path : 'directives', 
+            loadComponent : () => import('./components/demo04-directives/demo04-directives').then(c => c.Demo04Directives)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

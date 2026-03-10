@@ -1,0 +1,90 @@
+<h2>Les directives</h2>
+<h3>Les directives de composants</h3>
+<h4>ngStyle</h4>
+<p>La directive ngStyle permet de manipuler le CSS de votre élément HTML à l'aide d'un objet de style.</p>
+<p>Exemples :</p>
+<table>
+    <thead>
+        <tr>
+            <th>[ngStyle]</th>
+            <th>[style]</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div [ngStyle]="circleStyle"></div>
+            </td>
+            <td>
+                <div [style]="circleStyle"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Attention, un import est nécessaire.</td>
+            <td>Pas d'import et comportement identique.</td>
+        </tr>
+    </tbody>
+</table>
+<h4>[ngClass]</h4>
+<p>Cette directive permet de gérer la présence ou non de class CSS à l'aide de valeur logique.</p>
+<p>Exemple :</p>
+<table>
+    <thead>
+        <tr>
+            <th>[ngClass]</th>
+            <th>[class]</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div [ngClass]="{square : true, circle : isCircle}"></div>
+            </td>
+            <td>
+                <div [class]="{square : true, circle : isCircle}"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Attention, un import est nécessaire.</td>
+            <td>Pas d'import et comportement identique.</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="onClickToggleCircle()">Switch form</button>
+
+<h3>Directives Structurelles</h3>
+<h4><span style="text-decoration: line-through;">*ngIf</span> → {{'@if'}} </h4>
+
+<p>La directive if permet l'affichage ou le masquage d'élément HTML selon des booléens du TypeScript.</p>
+
+<h4><span style="text-decoration: line-through;">*ngFor</span> → {{'@for'}} </h4>
+
+<p>La directive for permet de répéter l'affichage d'élément HTML selon un tableau de données du TypeScript.</p>
+
+<p>Exemples :</p>
+<div>
+    <p>Nom d'utilisateur : {{userData.username}}</p>
+    @if (userData.pets && userData.pets.length == 1){
+        <p>Et son fidèle compagnon : {{userData.pets[0]}}.</p>
+    }
+    @else if(userData.pets && userData.pets.length > 1) {
+        <p>Animaux : {{userData.pets.length}}</p>
+        <ul>
+            @for(pet of userData.pets; track pet; let i = $index, total = $count, isEven= $even, isFirst = $first, isLast = $last ){
+                <li [style]="{
+                    color : isEven?'red':'blue', 
+                    fontWeight: isLast? 'bolder' : 400, 
+                    fontStyle : isFirst?'italic':'none'
+                    }">
+                    {{i+1}}/{{total}} - {{pet}}
+                </li>
+            }
+        </ul>
+    }
+    @else{
+        <p>N'a pas d'animaux.</p>
+    }
+</div>
+<input type="text" placeholder="Nom de l'animal" [(ngModel)]="animalName">
+<button (click)="onClickAddAnimal()">Ajouter</button>
