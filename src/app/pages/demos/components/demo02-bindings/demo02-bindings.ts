@@ -14,6 +14,7 @@ export class Demo02Bindings {
   public favoriteColor? : string;
   public count : number = 0;
   public isSwitch : boolean = true;
+  public divSize : number = 10;
 
   constructor(){
     this.username = "Samuel";
@@ -25,5 +26,14 @@ export class Demo02Bindings {
 
   public onClickSwitchDisabled() : void{
     this.isSwitch = !this.isSwitch;
+  }
+
+  public onMouseEnterDoubleSize() : void{
+    if(this.divSize < 512){
+      this.divSize = this.divSize *2;
+    }
+    else{
+      this.divSize = 10;
+    }
   }
 }

@@ -9,7 +9,8 @@
 <p>L'event Binding correspond à l'éxécution de fonction provenant du TypeScript lors d'un événement sur un Element HTML. L'événement doit être défini comme attribut et entourré de (...) .</p>
 <p>Exemple : Cliquer sur le boutton enclenchera la fonction onClickAddOne() du TypeScript.</p>
 <input type="button" (click)="onClickAddOne()" [value]="count">
-
+<p>Exemple : La div suivante double de taille quand vous passez la souris dessus.</p>
+<div [style]="{border : '1px solid black', height : divSize+'px', width : divSize+'px'}" (mouseenter)="onMouseEnterDoubleSize()"></div>
 <h3>Attribute Binding</h3>
 <p>l'attribute Binding correspond à la récupération de valeur du TypeScript pour définir des valeurs de propriétés. Cela peut-être des valeurs concrêtes (voir le [value] du bouton précédent) ou des booléens (pour la présence ou non d'attribut).</p>
 <input type="button" (click)="onClickSwitchDisabled()" [value]="(isSwitch)?'off':'on'" [disabled]="isSwitch">
