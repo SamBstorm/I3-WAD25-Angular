@@ -1,0 +1,16 @@
+<h2>Les Bindings</h2>
+<h3>Property Bindings</h3>
+<p>Les informations du fichier TypeScript du composant peuvent être transmit à l'HTML à l'aide du {{bindingSymbols}} pour le <strong>One Way Binding</strong>.</p>
+<p>Exemple : c'est dans le typescript que se trouve mon username : {{username}}</p>
+<p>Mais, mon username est <input type="text" [(ngModel)]="username" placeholder="Veuillez introduire votre nom d'utilisateur"></p>
+<p>En <strong>Two Way Binding</strong>, attention de ne pas oublier <strong>l'import du FormModule</strong> pour avoir accès à l'attribut <strong>[(ngModel)]</strong> de votre input.</p>
+<p>Exemple : Choisissez votre couleur préférée : <input type="color" [(ngModel)]="favoriteColor"><br>Le code couleur est <span [style]="{color : favoriteColor}">{{favoriteColor}}</span>.</p>
+<h3>Event Bindings</h3>
+<p>L'event Binding correspond à l'éxécution de fonction provenant du TypeScript lors d'un événement sur un Element HTML. L'événement doit être défini comme attribut et entourré de (...) .</p>
+<p>Exemple : Cliquer sur le boutton enclenchera la fonction onClickAddOne() du TypeScript.</p>
+<input type="button" (click)="onClickAddOne()" [value]="count">
+
+<h3>Attribute Binding</h3>
+<p>l'attribute Binding correspond à la récupération de valeur du TypeScript pour définir des valeurs de propriétés. Cela peut-être des valeurs concrêtes (voir le [value] du bouton précédent) ou des booléens (pour la présence ou non d'attribut).</p>
+<input type="button" (click)="onClickSwitchDisabled()" [value]="(isSwitch)?'off':'on'" [disabled]="isSwitch">
+<input type="button" (click)="onClickSwitchDisabled()" [value]="(isSwitch)?'on':'off'" [disabled]="!isSwitch">
