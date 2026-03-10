@@ -9,5 +9,7 @@ export const routes: Routes = [
         loadChildren : () => import('./pages/demos/demos.routes').then(r => r.routes)},
     {path : 'exos', component : Exos, 
         loadChildren : () => import('./pages/exos/exos.routes').then(r => r.routes)},
-    {path : '', redirectTo : 'home', pathMatch : 'full'}
+    {path : '', redirectTo : 'home', pathMatch : 'full'},
+    {path : '**', 
+        loadComponent : () => import('./pages/not-found/not-found').then(c => c.NotFound)}
 ];
