@@ -6,5 +6,8 @@ export const routes : Routes = [
         {path : 'bindings', 
             loadComponent : () => import('./components/demo02-bindings/demo02-bindings').then(c => c.Demo02Bindings)
         },
+        {path : 'pipes', 
+            loadComponent : () => import('./components/demo03-pipes/demo03-pipes').then(c => c.Demo03Pipes)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

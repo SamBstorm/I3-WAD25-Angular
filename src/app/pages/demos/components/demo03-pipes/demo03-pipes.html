@@ -1,0 +1,5 @@
+<h2>{{title|uppercase}}</h2>
+<p>Angular nous offre un ensemble d'outils nommé les pipes (<a href="https://angular.dev/guide/templates/pipes" target="_blank">Plus d'infos</a>) dont plusieurs concerne le formattage et la transformations de données provenant du Property Binding en One Way dans l'HTML.</p>
+<p>Aujourd'hui, nous sommes le {{today | date:'EEEE dd-MM-yyyy' | lowercase }}</p>
+<div [innerHTML]="students | htmlList"></div>
+<div [innerHTML]="students | htmlList:'ol'"></div>
