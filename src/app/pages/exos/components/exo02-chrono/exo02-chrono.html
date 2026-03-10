@@ -1,0 +1,8 @@
+<h2>Bindings et Pipes</h2>
+<h3>Le chronomètre</h3>
+<p>{{chrono() | timer}}</p>
+<div>
+    <button (click)="onClickStart()" [disabled]="interval">Start</button>
+    <button (click)="onClickPause()" [disabled]="!interval">Pause</button>
+    <button (click)="onClickReset()" [disabled]="chrono() == 0">Reset</button>
+</div>

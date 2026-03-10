@@ -5,5 +5,7 @@ export const routes : Routes =[
         {path: 'intro', component : ExoIntro},
         {path: 'routeComponent', 
             loadComponent : () => import('./components/exo01-route/exo01-route').then(c => c.Exo01Route)},
+        {path: 'chrono', 
+            loadComponent : () => import('./components/exo02-chrono/exo02-chrono').then(c => c.Exo02Chrono)},
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];
