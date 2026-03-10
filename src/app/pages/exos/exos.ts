@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-exos',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './exos.html',
   styleUrl: './exos.css',
 })
