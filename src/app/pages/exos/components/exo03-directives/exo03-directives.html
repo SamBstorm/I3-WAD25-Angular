@@ -25,13 +25,13 @@
     }
     @else {
         <ul>
-            @for(animal of animals; track animal.name; let index = $index){
+            @for(animal of animals; track animal.name){
                 <li [class]="{isWalking : animal.isWalking}">{{animal.name}} ({{animal.specy}})
                     @if(animal.isWalking){
-                        <button (click)="onClickSwitchWalking(index)">Revenir de balade</button>
+                        <button (click)="onClickSwitchWalking(animal)">Revenir de balade</button>
                     }
                     @else {
-                        <button (click)="onClickSwitchWalking(index)">Partir en balade</button>
+                        <button (click)="onClickSwitchWalking(animal)">Partir en balade</button>
                     }
                 </li>
             }

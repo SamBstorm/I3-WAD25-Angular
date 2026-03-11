@@ -29,7 +29,7 @@ export class Exo03Directives {
     this.animalSpecy = 'none';
   }
 
-  public onClickSwitchWalking(index : number) : void{
-    this.animals[index].isWalking = !this.animals[index].isWalking;
+  public onClickSwitchWalking(animal : IAnimal) : void{
+    animal.isWalking = !animal.isWalking;
   }
 }
