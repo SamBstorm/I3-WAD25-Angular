@@ -1,0 +1,16 @@
+<div class="enfant">
+    <h4>Code de l'enfant</h4>
+    <h5>Input entrant dans l'enfant</h5>
+    <div>
+        <label for="inputFromParent">Variable du parent :</label>
+        <input type="text" id="inputFromParent" [value]="inputFromParent()" readonly>
+    </div>
+    <h5>Variable transmit par l'enfant vers parent via Output</h5>
+    <div>
+        <label for="outputFromEnfant">Variable de l'enfant :</label>
+        <input type="text" id="outputFromEnfant" [(ngModel)]="varEnfant" (ngModelChange)="onValueChange($event)">
+    </div>
+    <h5>Ng-Content</h5>
+    <p>HTML provenant du parent : </p>
+    <ng-content></ng-content>
+</div>

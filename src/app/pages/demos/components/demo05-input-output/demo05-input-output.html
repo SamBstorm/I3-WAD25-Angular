@@ -1,0 +1,21 @@
+<h2>Communication input/output</h2>
+<p>Lorsque les composants nécessecite une communication de données entre le composant parent (celui qui appelle un composant par une balise HTML) et le composant enfant (celui appelé par la balise du parent), il nous faut transmettre les données via les Input et Output.</p>
+<div class="parent">
+    <h4>Code du parent</h4>
+    <h5>Valeur du parent envoyé dans l'Input de l'enfant</h5>
+    <div>
+        <label for="varParent">Variable du parent :</label>
+        <input type="text" id="varParent" [value]="varParent" readonly>
+    </div>
+    <h5>Valeur émise par l'enfant via son Output (émetteur)</h5>
+    <div>
+        <label for="varFromEnfant">Variable du parent :</label>
+        <input type="text" id="varFromEnfant" [value]="varEnfantFromEmetteur" readonly>
+    </div>
+    <p>En dessous, se trouve l'appel de l'enfant :</p>
+    <app-demo05-input-output-enfant 
+        [inputFromParent]="varParent" 
+        (outputEmetteur)="onReceivedValue($event)">
+        <p>Voici ce qui rempli la balise de l'enfant &lt;ng-content&gt;.</p>
+    </app-demo05-input-output-enfant>
+</div>

@@ -12,5 +12,8 @@ export const routes : Routes = [
         {path : 'directives', 
             loadComponent : () => import('./components/demo04-directives/demo04-directives').then(c => c.Demo04Directives)
         },
+        {path : 'inputOutput', 
+            loadComponent : () => import('./components/demo05-input-output/demo05-input-output').then(c => c.Demo05InputOutput)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];
