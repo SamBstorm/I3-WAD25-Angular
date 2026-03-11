@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NgStyle, NgClass } from "@angular/common";
 import { FormsModule } from '@angular/forms';
+import { Highlight } from '../../../../shared/directives/highlight';
 
 @Component({
   selector: 'app-demo04-directives',
-  imports: [NgStyle, NgClass, FormsModule],
+  imports: [NgStyle, NgClass, FormsModule, Highlight],
   templateUrl: './demo04-directives.html',
   styleUrl: './demo04-directives.css',
 })
