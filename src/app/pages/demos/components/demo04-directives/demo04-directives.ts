@@ -26,6 +26,7 @@ export class Demo04Directives {
   };
 
   public animalName? :string;
+  public favoriteAnimal? : string;
 
   public onClickToggleCircle() : void{
     this.isCircle = !this.isCircle;

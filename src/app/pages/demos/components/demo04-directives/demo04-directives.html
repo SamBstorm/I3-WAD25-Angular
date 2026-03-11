@@ -88,3 +88,30 @@
 </div>
 <input type="text" placeholder="Nom de l'animal" [(ngModel)]="animalName">
 <button (click)="onClickAddAnimal()">Ajouter</button>
+
+<h4><span style="text-decoration: line-through;">*ngSwitch</span> → {{'@switch'}} </h4>
+
+<p>La directive switch permet de modifier l'affichage d'élément HTML selon une donnée précise du TypeScript.</p>
+
+<select [(ngModel)]="favoriteAnimal">
+    <option selected disabled>Veuillez choisir un animal favoris</option>
+    <option>Chat</option>
+    <option>Chien</option>
+    <option>Cheval</option>
+</select>
+<div>
+    @switch(favoriteAnimal){
+        @case('Chat'){
+            <p>Vous adorez les félins!</p>
+        }
+        @case('Chien'){
+            <p>Ce n'est pas pour rien que c'est le meilleur ami de l'homme!</p>
+        }
+        @case('Cheval'){
+            <p>De quoi se balader les cheveux au vent!</p>
+        }
+        @default {
+            <p>Quel suspense!</p>
+        }
+    }
+</div>
