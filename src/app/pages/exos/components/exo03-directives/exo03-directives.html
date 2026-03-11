@@ -27,12 +27,15 @@
         <ul>
             @for(animal of animals; track animal.name){
                 <li [class]="{isWalking : animal.isWalking}">{{animal.name}} ({{animal.specy}})
-                    @if(animal.isWalking){
-                        <button (click)="onClickSwitchWalking(animal)">Revenir de balade</button>
-                    }
-                    @else {
-                        <button (click)="onClickSwitchWalking(animal)">Partir en balade</button>
-                    }
+                    <button (click)="onClickSwitchWalking(animal)">
+                        <!-- @if(animal.isWalking){
+                            Revenir de balade
+                        }
+                        @else {
+                            Partir en balade
+                        } -->
+                            {{(animal.isWalking)?'Revenir de balade':'Partir en balade'}}
+                    </button>                    
                 </li>
             }
         </ul>
