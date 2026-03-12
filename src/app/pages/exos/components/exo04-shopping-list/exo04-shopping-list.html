@@ -1,0 +1,11 @@
+<h4>Votre liste de shopping :</h4>
+@if(products().length <= 0){
+    <p>Aucun produit enregistré...</p>
+}
+@else {
+    <ul>
+        @for(product of products(); track product; let index=$index){
+            <li>{{product}} <button (click)="supprimerProduit(index)">🗑️</button></li>
+        }
+    </ul>
+}

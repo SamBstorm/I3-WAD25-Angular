@@ -9,5 +9,7 @@ export const routes : Routes =[
             loadComponent : () => import('./components/exo02-chrono/exo02-chrono').then(c => c.Exo02Chrono)},
         {path: 'animal', 
             loadComponent : () => import('./components/exo03-directives/exo03-directives').then(c => c.Exo03Directives)},
+        {path: 'shopping', 
+            loadComponent : () => import('./components/exo04-shopping/exo04-shopping').then(c => c.Exo04Shopping)},
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

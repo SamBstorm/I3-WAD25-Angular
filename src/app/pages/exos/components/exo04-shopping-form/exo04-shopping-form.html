@@ -1,0 +1,6 @@
+<h4>Veuillez introduire votre nouvel article</h4>
+<div>
+    <label for="articleName">Nom de l'article :</label>
+    <input type="text" id="articleName" placeholder="Le nom..." [(ngModel)]="articleName">
+    <button (click)="ajouterArticle()" [disabled]="!articleName || articleName.trim().length <= 0">Ajouter</button>
+</div>

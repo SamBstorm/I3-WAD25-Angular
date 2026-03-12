@@ -1,0 +1,14 @@
+<h2>Les input et output</h2>
+<h3>La shopping liste</h3>
+<p>Les encadrés suivants sont des composants enfants de cette page, et communiquent entre elles grâce aux input et output en relation avec cette page.</p>
+<div style="border:1px solid black; border-radius: 15px; padding: 10px;">
+    <app-exo04-shopping-form
+        (newProductEmitter)="addProduct($event)">
+    </app-exo04-shopping-form>
+</div>
+<div style="border:1px solid black; border-radius: 15px; padding: 10px;">
+    <app-exo04-shopping-list 
+        [products]="products" 
+        (deleteEmiter)="deleteProductIndex($event)">
+    </app-exo04-shopping-list>
+</div>
