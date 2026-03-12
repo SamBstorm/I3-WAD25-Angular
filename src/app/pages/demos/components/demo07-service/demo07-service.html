@@ -1,0 +1,23 @@
+<h2>Service</h2>
+<p>Ce service nous permet de stocker dans l'instance les données d'un tamagochi. Il permet aussi de fournir les fonctionnalités nécessaires à l'entretien de la bête virtuelle.</p>
+
+<h3>Tamagochi</h3>
+@if(!startGame){
+    <p>Pas encore de créature?</p>
+    <p>Donnez lui un nom et on s'occupe du reste!</p>
+    <input type="text" placeholder="Trouvez lui un chouette nom!" [(ngModel)]="tamaName">
+    <button (click)="startTama()">Démarrer</button>
+}
+@else{
+    <p>Voici : <strong>{{tamaName}}</strong></p>
+    <p>
+        @for(i of [].constructor(levelHappy());track $index){
+            ❤️
+        }
+    </p>
+    <p>@for(i of [].constructor(levelHungry());track $index){
+            😩
+        }</p>
+    <button (click)="onClickPlay()">Jouer</button>
+    <button (click)="onClickFeed()">Nourrir</button>
+}
