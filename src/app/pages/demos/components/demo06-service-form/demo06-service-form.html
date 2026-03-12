@@ -1,0 +1,10 @@
+<h4>Choisissez des valeurs</h4>
+<div>
+    <label for="nb1Value">Nb1 :</label>
+    <input id="nb1Value" type="number" min="0" max="10" step="0.5" [(ngModel)]="nb1">
+</div>
+<div>
+    <label for="nb2Value">Nb2 :</label>
+    <input id="nb2Value" type="number" min="0" max="10" step="0.5" [(ngModel)]="nb2">
+</div>
+<button (click)="sauvegarderValeurs()">Sauvegarder valeurs</button>

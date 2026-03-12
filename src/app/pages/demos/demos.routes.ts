@@ -15,5 +15,8 @@ export const routes : Routes = [
         {path : 'inputOutput', 
             loadComponent : () => import('./components/demo05-input-output/demo05-input-output').then(c => c.Demo05InputOutput)
         },
+        {path : 'service', 
+            loadComponent : () => import('./components/demo06-service/demo06-service').then(c => c.Demo06Service)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];
