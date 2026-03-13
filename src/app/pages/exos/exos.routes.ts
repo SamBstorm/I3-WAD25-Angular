@@ -11,5 +11,7 @@ export const routes : Routes =[
             loadComponent : () => import('./components/exo03-directives/exo03-directives').then(c => c.Exo03Directives)},
         {path: 'shopping', 
             loadComponent : () => import('./components/exo04-shopping/exo04-shopping').then(c => c.Exo04Shopping)},
+        {path: 'shoppingService', 
+            loadComponent : () => import('./components/exo05-shopping/exo05-shopping').then(c => c.Exo05Shopping)},
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

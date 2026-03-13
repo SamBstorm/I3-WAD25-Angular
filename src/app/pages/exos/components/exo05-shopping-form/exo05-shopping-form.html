@@ -1,0 +1,10 @@
+<h4>Veuillez introduire votre nouvel article</h4>
+<div>
+    <label for="articleName">Nom de l'article :</label>
+    <input type="text" id="articleName" placeholder="Le nom..." [(ngModel)]="articleName">
+</div>
+<div>
+    <label for="articleQuantity">Quantité :</label>
+    <input type="number" min="1" step="1" id="articleQuantity" placeholder="Le nombre..."  [(ngModel)]="articleQuantity">
+</div>
+<button (click)="onClickAjouter()">Ajouter</button>

@@ -1,0 +1,15 @@
+<h4>Votre liste de shopping :</h4>
+@if(products().length <= 0){
+    <p>Aucun produit enregistré...</p>
+}
+@else {
+    <ul>
+        @for(product of products(); track product; let index=$index){
+            <li>{{product.productName}} X {{product.quantity}} 
+                <button (click)="onClickSubOne(product.productName)">-</button>
+                <button (click)="onClickSupprimer(product.productName)">🗑️</button>
+                <button (click)="onClickAddOne(product.productName)">+</button>
+            </li>
+        }
+    </ul>
+}
