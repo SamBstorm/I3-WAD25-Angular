@@ -21,5 +21,8 @@ export const routes : Routes = [
         {path : 'service02', 
             loadComponent : () => import('./components/demo07-service/demo07-service').then(c => c.Demo07Service)
         },
+        {path : 'formBuilder', 
+            loadComponent : () => import('./components/demo08-form-builder/demo08-form-builder').then(c => c.Demo08FormBuilder)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

@@ -1,0 +1,110 @@
+<h3>Formulaires réactifs</h3>
+<p>Voici un exemple de formulaire intéractif. Il correspond à un formulaire d'enregistrement d'un utilisateur.</p>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstname">Prénom :</label>
+        <input type="text" id="firstname" formControlName="firstname">
+        @if(registerForm.controls['firstname'].invalid && registerForm.controls['firstname'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['firstname'].hasError('required')){
+                    Le prénom est obligatoire.
+                }
+                @else if (registerForm.controls['firstname'].hasError('minlength')) {
+                    Le prénom doit contenir au minimum 1 caractère.
+                }
+                @else if (registerForm.controls['firstname'].hasError('maxlength')) {
+                    Le prénom doit contenir au maximum 16 caractères.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="lastname">Nom de famille :</label>
+        <input type="text" id="lastname" formControlName="lastname">
+        @if(registerForm.controls['lastname'].invalid && registerForm.controls['lastname'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['lastname'].hasError('required')){
+                    Le nom de famille est obligatoire.
+                }
+                @else if (registerForm.controls['lastname'].hasError('minlength')) {
+                    Le nom de famille doit contenir au minimum 1 caractère.
+                }
+                @else if (registerForm.controls['lastname'].hasError('maxlength')) {
+                    Le nom de famille doit contenir au maximum 16 caractères.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="birthdate">Date de naissance :</label>
+        <input type="date" id="birthdate" formControlName="birthdate">
+        @if(registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['birthdate'].hasError('required')){
+                    La date de naissance est obligatoire.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="email">Adresse email :</label>
+        <input type="email" id="email" formControlName="email">
+        @if(registerForm.controls['email'].invalid && registerForm.controls['email'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['email'].hasError('required')){
+                    L'adresse email est obligatoire.
+                }
+                @else if (registerForm.controls['email'].hasError('email')) {
+                    L'adresse email n'est pas valide.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" formControlName="password">
+        @if(registerForm.controls['password'].invalid && registerForm.controls['password'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['password'].hasError('required')){
+                    Le mot de passe est obligatoire.
+                }
+                @else if (registerForm.controls['password'].hasError('pattern')) {
+                    Le mot de passe n'est pas valide.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="confirm-password">Veuillez confirmer le mot de passe :</label>
+        <input type="password" id="confirm-password" formControlName="confirmPassword">
+        @if(registerForm.controls['confirmPassword'].invalid && registerForm.controls['confirmPassword'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['confirmPassword'].hasError('required')){
+                    La confirmation du mot de  passe est obligatoire.
+                }
+                @else if (registerForm.controls['confirmPassword'].hasError('pattern')) {
+                    La confirmation du mot de  passe n'est pas valide.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="newsletter"><p>Je souhaite m'inscrire à la newsletter :</p></label>
+        <input type="checkbox" id="newsletter" formControlName="newsletter">
+    </div>
+    <div>
+        <label for="consent"><p>J'accepte les conditions générales d'utilisations ...</p></label>
+        <input type="checkbox" id="consent" formControlName="consent">
+        @if(registerForm.controls['consent'].invalid && registerForm.controls['consent'].touched){
+            <p style="color:red">
+                @if(registerForm.controls['consent'].hasError('required')){
+                    Vous devez accepter les conditions d'utilisation.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <button type="submit">S'enregistrer</button>
+    </div>
+</form>
