@@ -24,5 +24,8 @@ export const routes : Routes = [
         {path : 'formBuilder', 
             loadComponent : () => import('./components/demo08-form-builder/demo08-form-builder').then(c => c.Demo08FormBuilder)
         },
+        {path : 'formArray', 
+            loadComponent : () => import('./components/demo09-form-array/demo09-form-array').then(c => c.Demo09FormArray)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

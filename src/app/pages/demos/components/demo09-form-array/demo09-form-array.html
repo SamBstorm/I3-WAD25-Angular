@@ -1,0 +1,21 @@
+<h3>Formulaires réactifs extensibles</h3>
+<p>Un formulaire peut changer de forme selon les circonstances, assez fréquemment on utilisera le FormArray dans notre FormGroup</p>
+
+<form [formGroup]="guestForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="host">Hôte : </label>
+        <input type="text" id="host" formControlName="host">
+    </div>
+    <fieldset formArrayName="guests">
+        <legend>Invités : </legend>
+        <button type="button" (click)="addGuest()">Ajouter invité</button>
+        <button type="button" (click)="subGuest()">Supprimer invité</button>
+        @for(guest of getGuestsArray().controls; track $index; let i = $index){
+            <div>
+                <label for="guest-{{i}}">Invité {{i+1}} :</label>
+                <input type="text" id="guest-{{i}}" [formControlName]="i">
+            </div>
+        }
+    </fieldset>
+    <button type="submit">Envoyer</button>
+</form>
