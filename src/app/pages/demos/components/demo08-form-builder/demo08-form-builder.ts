@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IUser } from '../../../../shared/models/iuser';
+import { CustomValidators } from '../../../../shared/validators/customValidators';
 
 @Component({
   selector: 'app-demo08-form-builder',
@@ -14,7 +15,7 @@ export class Demo08FormBuilder {
   public registerForm: FormGroup = this._fb.group({
     firstname: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(16)]],
     lastname: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(16)]],
-    birthdate: [null, [Validators.required]],
+    birthdate: [null, [Validators.required, CustomValidators.checkAge(18)]],
     email: [null, [Validators.required, Validators.email]],
     password: [
       null,

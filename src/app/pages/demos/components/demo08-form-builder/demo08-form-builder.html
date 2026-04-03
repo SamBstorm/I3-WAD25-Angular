@@ -44,6 +44,9 @@
                 @if(registerForm.controls['birthdate'].hasError('required')){
                     La date de naissance est obligatoire.
                 }
+                @else if(registerForm.controls['birthdate'].hasError('checkdate')){
+                    La date de naissance n'est pas valide.
+                }
             </p>
         }
     </div>
