@@ -13,5 +13,7 @@ export const routes : Routes =[
             loadComponent : () => import('./components/exo04-shopping/exo04-shopping').then(c => c.Exo04Shopping)},
         {path: 'shoppingService', 
             loadComponent : () => import('./components/exo05-shopping/exo05-shopping').then(c => c.Exo05Shopping)},
+        {path: 'loginForm', 
+            loadComponent : () => import('./components/exo06-form-builder/exo06-form-builder').then(c => c.Exo06FormBuilder)},
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

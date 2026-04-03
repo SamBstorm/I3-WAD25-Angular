@@ -1,0 +1,39 @@
+<h3>Formulaires réactifs</h3>
+<h4>Formulaire de connexion</h4>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="email">Adresse email :</label>
+        <input type="email" id="email" formControlName="email">
+        @if(loginForm.controls['email'].invalid && loginForm.controls['email'].touched){
+            <p style="color: red;">
+                @if(loginForm.controls['email'].hasError('required')){
+                    L'adresse email est obligatoire.
+                }
+                @else if (loginForm.controls['email'].hasError('email')) {
+                    L'adresse email n'est pas valide.
+                }
+            </p>
+        }
+    </div>
+    <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" formControlName="password">
+        @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched){
+            <p style="color: red;">
+                @if(loginForm.controls['password'].hasError('required')){
+                    Le mot de passe est obligatoire.
+                }
+                @else if (loginForm.controls['password'].hasError('pattern')) {
+                    Le mot de passe n'est pas valide.
+                }
+                @else if (loginForm.controls['password'].hasError('minlength')) {
+                    Le mot de passe n'a pas assez de caractères.
+                }
+                @else if (loginForm.controls['password'].hasError('maxlength')) {
+                    Le mot de passe a trop de caractères.
+                }
+            </p>
+        }
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+</form>
