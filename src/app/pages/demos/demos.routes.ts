@@ -43,5 +43,13 @@ export const routes : Routes = [
             loadComponent : () => import('./components/demo12-guard-with-login/demo12-guard-with-login').then(c => c.Demo12GuardWithLogin),
             canActivate : [mustBeLoggedGuard]
         },
+        {
+            path : 'subjects',
+            loadComponent : () => import('./components/demo13-subjects/demo13-subjects').then(c => c.Demo13Subjects)
+        },
+        {
+            path : 'signals',
+            loadComponent : () => import('./components/demo14-signals/demo14-signals').then(c => c.Demo14Signals)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];
