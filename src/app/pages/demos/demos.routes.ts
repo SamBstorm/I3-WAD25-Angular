@@ -51,5 +51,9 @@ export const routes : Routes = [
             path : 'signals',
             loadComponent : () => import('./components/demo14-signals/demo14-signals').then(c => c.Demo14Signals)
         },
+        {
+            path : 'rxjs',
+            loadComponent : () => import('./components/demo15-operateurs-rxjs/demo15-operateurs-rxjs').then(c => c.Demo15OperateursRxjs)
+        },
         {path : '', redirectTo : 'intro', pathMatch : 'full'}
     ];

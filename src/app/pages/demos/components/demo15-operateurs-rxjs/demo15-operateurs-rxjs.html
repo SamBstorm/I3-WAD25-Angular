@@ -1,0 +1,21 @@
+<h3>Les opérateurs Rxjs</h3>
+<p></p>
+
+<h4>Ajouter étudiantes</h4>
+<input type="text" [(ngModel)]="studentName">
+<button (click)="onAdd()">Ajouter</button>
+
+<h4>Liste des étudiantes</h4>
+<ul>
+    @for(stud of students; track stud.id){
+        <li>{{stud.id}} : {{stud.name}}</li>
+    }
+</ul>
+
+
+<h4>Nom des étudiantes</h4>
+<ul>
+    @for(stud of studentNames; track $index){
+        <li>{{stud}}</li>
+    }
+</ul>
