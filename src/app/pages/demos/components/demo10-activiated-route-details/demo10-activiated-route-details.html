@@ -1,0 +1,9 @@
+<h3>Routes paramétrées</h3>
+<p>Cette route vous permet de voire les informations détaillées d'une étudiante, grace au paramètre id de la Route.</p>
+@if(student){
+    <h4>{{student.name}}</h4>
+    <p>Identifiant : {{student!.id}}</p>
+}
+@else {
+    <p>Chargement en cours...</p>
+}

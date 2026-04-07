@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ILogin } from '../../../../shared/models/ilogin';
 import { Router } from '@angular/router';
+import { LoginStorage } from '../../../../shared/services/login-storage';
 
 @Component({
   selector: 'app-exo06-form-builder',
@@ -13,6 +14,7 @@ export class Exo06FormBuilder {
 
   private _router : Router = inject(Router);
   private _fb : FormBuilder = inject(FormBuilder);
+  private _loginStorage : LoginStorage = inject(LoginStorage);
 
   public loginForm : FormGroup = this._fb.group({
     email : [null, [Validators.required, Validators.email]],
@@ -29,6 +31,7 @@ export class Exo06FormBuilder {
     //Appeller un service pour vérifier si l'utilisateur est correctement identifié
     //Si identifier rediriger grace au Router
     if(loginInformation.email == 'samuel.legrain@bstorm.be' && loginInformation.password=="Test1234=" ){
+      this._loginStorage.setLogin(loginInformation);
       this._router.navigateByUrl('/home');
     }
   }

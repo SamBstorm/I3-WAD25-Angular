@@ -1,0 +1,9 @@
+<h3>Routes paramétrées</h3>
+<p>Cette liste d'étudiantes permet de rediriger l'utilisateur sur une page dédié à l'étudiante selon son Identifiant.</p>
+
+<h4>Les Wad25 </h4>
+<ul>
+    @for(stud of students;track stud.id){
+        <li><a routerLink="/demos/activatedRoute-details/{{stud.id}}">{{stud.name}}</a></li>
+    }
+</ul>
