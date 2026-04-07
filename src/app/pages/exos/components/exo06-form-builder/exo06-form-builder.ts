@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ILogin } from '../../../../shared/models/ilogin';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exo06-form-builder',
@@ -10,6 +11,7 @@ import { ILogin } from '../../../../shared/models/ilogin';
 })
 export class Exo06FormBuilder {
 
+  private _router : Router = inject(Router);
   private _fb : FormBuilder = inject(FormBuilder);
 
   public loginForm : FormGroup = this._fb.group({
@@ -24,5 +26,10 @@ export class Exo06FormBuilder {
       password : this.loginForm.value.password
     };
     console.log(loginInformation);
+    //Appeller un service pour vérifier si l'utilisateur est correctement identifié
+    //Si identifier rediriger grace au Router
+    if(loginInformation.email == 'samuel.legrain@bstorm.be' && loginInformation.password=="Test1234=" ){
+      this._router.navigateByUrl('/home');
+    }
   }
 }
